@@ -1,0 +1,20 @@
+service: sudoku-service
+
+provider:
+    name: aws
+    memorySize: 4096
+    region: eu-west-2
+    timeout: 60
+    ecr:
+        images:
+            sudoku:
+                path: ./ # Directory containing your Dockerfile
+                platform: linux/amd64
+
+functions:
+    AppFunction:
+        image:
+            name: sudoku
+        url: true
+        events:
+            - schedule: rate(1 minute) # Ping the function every 1 minute to keep it warm
