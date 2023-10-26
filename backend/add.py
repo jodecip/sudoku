@@ -12,4 +12,4 @@ class Output(BaseModel):
 
 @router.post("/add", response_model=Output)
 def add(input: Input):
-    return Output(sum=input.a + input.b)
+    return Output(sum=input.a + input.b + input.a)

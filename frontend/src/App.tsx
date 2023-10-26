@@ -3,9 +3,10 @@ import Board from "./Compoents/Board";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Board /> {} */}
-      <Add />
+    // <div className="App">
+    <div>
+      <Board />
+      {/* <Add /> */}
     </div>
   );
 }
